@@ -1,6 +1,4 @@
-﻿---
-
-###Task 02
+﻿# Task 02
 
 [Посмотреть реализацию](https://jsfiddle.net/jqe1dnvc/)
 

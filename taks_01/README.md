@@ -1,6 +1,4 @@
-﻿---
-
-###Task 01
+﻿# Task 01
 
 [Посмотреть реализацию](https://jsfiddle.net/qn59yg18/)
 

@@ -18,18 +18,28 @@
 
       switch (method) {
         case 'get':
-          checkLocalKey(key) && console.log(key);
+        {
+          const localKey = checkLocalKey(key);
+          if (localKey) {
+            console.log(localKey);
+            reply();
+          }
+        }
           break;
 
         case 'set':
           localStorage.setItem(key, value);
-          checkLocalKey(key) && console.log('written');
+          if (checkLocalKey(key)) {
+            console.log('written');
+            reply();
+          }
           break;
 
         case 'delete':
           if (checkLocalKey(key)) {
             localStorage.removeItem(key);
             console.log('removed');
+            reply();
           }
           break;
 
@@ -43,6 +53,10 @@
     const localKey = localStorage.getItem(key);
     !localKey && console.log(`Key is not allowed (${key})`);
     return localKey;
+  }
+
+  function reply() {
+    window.top.postMessage('reply', '*');
   }
 </script>
 </body>

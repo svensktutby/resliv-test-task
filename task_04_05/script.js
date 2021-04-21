@@ -14,6 +14,12 @@ iframe.onerror = () => {
   console.log('Something went wrong!');
 };
 
+window.onmessage = ({ data }) => {
+  if (data === 'reply') {
+    console.log('fire callback!');
+  }
+};
+
 const postMessageHandler = (method, key = keyInput.value, value = valueInput.value) => {
   if (method === 'set' && (!key || !value)) {
     console.log('Key or Value is empty');

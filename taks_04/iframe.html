@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Task 04</title>
+</head>
+
+<body>
+<h1>Domain two</h1>
+
+<script>
+  window.onmessage = function ({ data }) {
+    if (data) {
+      const { method, key, value } = JSON.parse(data);
+
+      switch (method) {
+        case 'get':
+          checkLocalKey(key) && console.log(key);
+          break;
+
+        case 'set':
+          localStorage.setItem(key, value);
+          checkLocalKey(key) && console.log('written');
+          break;
+
+        case 'delete':
+          if (checkLocalKey(key)) {
+            localStorage.removeItem(key);
+            console.log('removed');
+          }
+          break;
+
+        default:
+          console.log(`Unknown method (${method})`);
+      }
+    }
+  };
+
+  function checkLocalKey(key) {
+    const localKey = localStorage.getItem(key);
+    !localKey && console.log(`Key is not allowed (${key})`);
+    return localKey;
+  }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+@import "src/components/common/styles/base/variables";
+
+.header {
+  position: relative;
+
+  height: $header-height;
+
+  background-color: $theme-color;
+}
+
+.container {
+  composes: container from "../common/styles/container.module.scss";
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

@@ -1,0 +1,36 @@
+@import "src/components/common/styles/base/variables";
+$br-wrapper: $gray-lighter;
+$br-bar: #30cfd0;
+$br-gradient: $morpheus-den-gradient;
+
+.wrapper {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+
+  background-color: $br-wrapper;
+}
+
+.bar {
+  width: 0;
+  height: 3px;
+
+  background-color: $br-bar;
+  background-image: $br-gradient;
+
+  animation: loading 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -1,0 +1,63 @@
+@import "src/components/common/styles/base/variables";
+
+.listWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.list {
+  width: 240px;
+  margin: 0;
+  padding-left: 0;
+
+  list-style-type: none;
+
+  box-shadow: $shadow;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px 4px 20px;
+
+  transition: background-color $transition-time;
+}
+
+.item:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.item:hover {
+  background-color: gainsboro;
+}
+
+.item .btnDelete {
+  margin-left: auto;
+  padding: 0;
+
+  background-color: transparent;
+  border-color: transparent;
+
+  & svg {
+    width: 16px;
+
+    fill: $theme-color;
+
+    transition-duration: $transition-time;
+    transition-property: fill;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: transparent;
+    border-color: transparent;
+
+    & svg {
+      fill: palevioletred;
+    }
+  }
+}

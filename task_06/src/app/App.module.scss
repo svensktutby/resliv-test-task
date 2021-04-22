@@ -1,0 +1,19 @@
+@import "src/components/common/styles/base/variables";
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background-color: $body-bg;
+  background-image: $body-gradient;
+
+  & h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.container {
+  composes: container from "../components/common/styles/container.module.scss";
+}

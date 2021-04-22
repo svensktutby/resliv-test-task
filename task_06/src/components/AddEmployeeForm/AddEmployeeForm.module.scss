@@ -1,0 +1,14 @@
+@import "src/components/common/styles/base/variables";
+
+.form {
+  max-width: 240px;
+  margin: 0 auto;
+
+  & > div {
+    margin-bottom: 10px;
+  }
+
+  & button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,67 @@
+@import "src/components/common/styles/base/variables";
+$bg-color: lighten($theme-color, 10%);
+$text-color: $white;
+$link-text-color: $gray-darker;
+
+.page {
+  position: fixed;
+  top: $header-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+
+  background-color: $bg-color;
+
+  @media screen and (max-width: $screen-sm) and (orientation: landscape) {
+    padding-top: 2rem;
+  }
+}
+
+.title {
+  flex-grow: 1;
+  margin-top: 0;
+
+  font-size: 3rem;
+  text-align: center;
+  color: $text-color;
+
+  @media screen and (max-width: $screen-sm) and (orientation: landscape) {
+    font-size: 2.5rem;
+  }
+}
+
+.text {
+  font-size: 2rem;
+  text-align: center;
+  color: $text-color;
+
+  @media screen and (max-width: $screen-sm) and (orientation: landscape) {
+    font-size: 1.5rem;
+  }
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.footerText {
+  font-size: 1.2rem;
+  color: $text-color;
+}
+
+.link {
+  composes: link from '../../components/common/LinkNative/LinkNative.module.scss';
+  color: $link-text-color;
+
+  &::after {
+    background-color: $link-text-color;
+  }
+}
